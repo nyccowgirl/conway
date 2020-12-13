@@ -1,5 +1,10 @@
 package com.company;
 
+/*
+Trang Hoang
+CS111B - Assignment 7B
+ */
+
 import java.util.*;
 
 public class ConwayMain {
