@@ -1,0 +1,9 @@
+/*
+Trang Hoang
+CS111B - Assignment 7B
+ */
+
+
+The Chaos Cell is similar to the Conway Cell except that it is alive if a random number is even, and if not, it follows
+the regular rules. At first this seems simple as to whether it is alive or not and oscillates on or off. However, once
+it starts to hit into other cells, it creates chaos with the other cells.

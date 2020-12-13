@@ -5,24 +5,33 @@ Trang Hoang
 CS111B - Assignment 7B
  */
 
-public class BlinkerCell extends AbstractCell {
+import java.util.Random;
 
-    public BlinkerCell(int r, int c, ConwayWorld w) {
+public class ChaosCell extends AbstractCell {
+    private static Random random = new Random();
+
+    public ChaosCell(int r, int c, ConwayWorld w) {
         super(r, c, w);
     }
 
     public boolean willBeAliveInNextGeneration() {
+        // Returns true if random number is even
+        if (random.nextInt() % 2 == 0) {
+                return true;
+        }
+
+        // Returns to Conway rules
         int nc = neighborCount();
 
         if (getIsAlive()) {
-            return (nc == 2 || nc == 3);
+            return (nc == 2 || nc == 4);
         } else {
             return (nc == 3);
         }
     }
 
     public AbstractCell cellForNextGeneration() {
-        BlinkerCell next = new BlinkerCell(getRow(), getColumn(), world);
+        ChaosCell next = new ChaosCell(getRow(), getColumn(), world);
 
         next.setIsAlive(willBeAliveInNextGeneration());
 
